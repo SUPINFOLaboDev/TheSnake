@@ -28,8 +28,10 @@ Affichage_Score()
 
 
 	Démarrage du jeu
-Boucle principale (boucle principale)
+	Boucle principale (boucle principale)
 	Récupération des inputs (Clavier)
 	Affichage général (Score, Affichage, Vie) 
 	Fin de partie 
 
+
+	Pour un outil un peu plus complet que GitHub.exe suivait ce tutoriel : http://dancingmonkeysaccelerated.blogspot.fr/2012/03/git-for-windows-with-tortoisegit-and.html
