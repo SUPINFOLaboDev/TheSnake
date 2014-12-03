@@ -1,0 +1,37 @@
+SNAKE : 
+
+Classe : 
+•	Snake 
+ 	liste_snake (liste de coordonnées appartenant au Snake)
+	Vitesse_snake 
+	Déplacement_snake ( enregistre direction)
+	Taille_snake 
+	deplaceSnake()
+	agrandirSnake()
+	agrandir_liste_snake()
+	mange_pomme()
+
+•	Jeux (collision)
+	augmenter_Score()
+	recup_Score()
+	score
+	tableau_jeu (zone de jeu, chaque case du tableau est un déplacement possible du snake)
+	test_collision()
+	Inde- spawn_pomme()
+
+•	Affichage
+	Affichage_jeu()
+	Affichage_tableau()
+	Affichage_Snake()
+	Affichage_Pomme()
+	Affichage_Score()
+
+
+	Démarrage du jeu
+	Boucle principale (boucle principale)
+	Récupération des inputs (Clavier)
+	Affichage général (Score, Affichage, Vie) 
+	Fin de partie 
+
+
+	Pour un outil un peu plus complet que GitHub.exe suivait ce tutoriel : http://dancingmonkeysaccelerated.blogspot.fr/2012/03/git-for-windows-with-tortoisegit-and.html
