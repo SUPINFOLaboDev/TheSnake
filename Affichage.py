@@ -1,9 +1,10 @@
 class Affichage:
 
-    def affichage_jeu(self):
-        return 0
+    def __init__(self):
+        __resolution_x = 640
+        __resolution_y = 480
 
-    def affichage_tableau(self):
+    def affichage_jeu(self):
         return 0
 
     def affichage_tableau(self):

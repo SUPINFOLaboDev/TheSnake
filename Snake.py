@@ -1,16 +1,24 @@
-import pygame,sys
-from pygame.locals import *
+class Snake:
+    
+    def __init__(self):
+        __vitesse_snake = 10
 
-pygame.init()
-fenetre = pygame.display.set_mode((640, 480))
-pygame.display.set_caption('Snake')
-pygame.display.flip()
-while True:
-    for event in pygame.event.get():
-        if event.type == QUIT:
-            pygame.quit()
-            sys.exit()
-    pygame.display.update()
+    def deplacement_snake(self):
+        return 0
+
+    def deplace_snake(self):
+        return 0
+
+    def agrandir_snake(self):
+        return 0
+
+    def agrandir_liste_snake(self):
+        return 0
+
+    def mange_pomme(self):
+        return 0
+
+
 
 
 
