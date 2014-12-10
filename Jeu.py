@@ -7,10 +7,12 @@ class Jeu:
     def __init__(self):
         self.__score = 0
         
-        self.__liste_jeu = []
+        '''self.__liste_jeu = []  # Deprecated replace with 2dimension list
         for i in range(255):
-            self.__liste_jeu.append(0)
+            self.__liste_jeu.append(0)'''
 
+        self.__tab_size_x = 0
+        self.__tab_size_y = 0
         print('Jeu creer')
 
     def augmenter_Score(self):

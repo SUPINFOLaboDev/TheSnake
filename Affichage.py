@@ -6,14 +6,17 @@ class Affichage:
         print('Affichage cree')
 
     def affichage_jeu(self):
+        # affiche le background
+        self.affichage_tableau()
+        self.affichage_snake()
+        self.affichage_pomme()
+        self.affichage_score()
         print('jeu affiche')
 
     def affichage_tableau(self):
-
         print('tableau affiche')
 
     def affichage_snake(self):
-
         print('snake affiche')
 
     def affichage_pomme(self):
