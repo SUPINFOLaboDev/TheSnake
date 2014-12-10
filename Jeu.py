@@ -4,8 +4,13 @@ from pygame.locals import *
 
 class Jeu:
 
-    def Jeu(self):
+    def __init__(self):
         self.__score = 0
+        
+        self.__liste_jeu = []
+        for i in range(255):
+            self.__liste_jeu.append(0)
+
         print('Jeu creer')
 
     def augmenter_Score(self):
@@ -17,8 +22,11 @@ class Jeu:
     def score(self):
         return 0
 
-    def tableau_jeu(self):
-        return 0
+    def get_tableau_jeu_indice(self, index):
+        return self.__liste_jeu[index]
+
+    def set_tableau_jeu_indice(self, index, valeur):
+        self.__liste_jeu[index] = valeur
 
     def test_collision(self):
         return 0
