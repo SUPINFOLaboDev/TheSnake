@@ -5,6 +5,7 @@ from pygame.locals import *
 class Jeu:
 
     def Jeu(self):
+        self.__score = 0
         print('Jeu creer')
 
     def augmenter_Score(self):

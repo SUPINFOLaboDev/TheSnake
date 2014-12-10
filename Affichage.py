@@ -9,9 +9,11 @@ class Affichage:
         print('jeu affiche')
 
     def affichage_tableau(self):
+
         print('tableau affiche')
 
     def affichage_snake(self):
+
         print('snake affiche')
 
     def affichage_pomme(self):

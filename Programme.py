@@ -18,21 +18,6 @@ while True:
 
 
 
-class Programme:  # main class allow to call every other class created
-
-    def __init__(self):
-        self.__serpent = Snake.Snake()
-        self.__affichage = Affichage.Affichage()
-        self.__jeu = Jeu.Jeu()
-
-    def getSerpent(self):
-        return self.__serpent
-
-    def getAffichage(self):
-        return self.__affichage
-
-    def getJeu(self):
-        return self.__affichage
-
-test = Programme()
-test.getAffichage().affichage_tableau()
+serpent = Snake.Snake()
+affichage = Affichage.Affichage()
+jeu = Jeu.Jeu()
