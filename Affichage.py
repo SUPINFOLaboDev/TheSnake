@@ -3,18 +3,19 @@ class Affichage:
     def __init__(self):
         __resolution_x = 640
         __resolution_y = 480
+        print('Affichage cree')
 
     def affichage_jeu(self):
-        return 0
+        print('jeu affiche')
 
     def affichage_tableau(self):
-        return 0
+        print('tableau affiche')
 
     def affichage_snake(self):
-        return 0
+        print('snake affiche')
 
     def affichage_pomme(self):
-        return 0
+        print('pomme affiche')
 
     def affichage_score(self):
-        return 0
+        print('score affiche')

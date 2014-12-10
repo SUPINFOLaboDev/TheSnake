@@ -1,4 +1,4 @@
-SNAKE : 
+﻿SNAKE : 
 
 Classe : 
 •	Snake 
@@ -17,7 +17,7 @@ Classe :
 	score
 	tableau_jeu (zone de jeu, chaque case du tableau est un déplacement possible du snake)
 	test_collision()
-	Inde- spawn_pomme()
+	Inde- spawn_pomme
 
 •	Affichage
 	Affichage_jeu()

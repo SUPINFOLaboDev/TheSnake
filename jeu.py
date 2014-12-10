@@ -1,7 +1,11 @@
+import pygame
+import sys
+from pygame.locals import *
+
 class Jeu:
 
     def Jeu(self):
-        return 0
+        print('Jeu creer')
 
     def augmenter_Score(self):
         return 0
