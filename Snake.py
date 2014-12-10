@@ -3,6 +3,7 @@ class Snake:
     def __init__(self):
         self.__vitesse_snake = 10
         self.__taille_snake = 5
+
         self.__direction = 'none'
         self.__liste_snake = []
         for i in range(255):

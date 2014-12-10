@@ -21,3 +21,5 @@ while True:
 serpent = Snake.Snake()
 affichage = Affichage.Affichage()
 jeu = Jeu.Jeu()
+
+
