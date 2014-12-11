@@ -6,10 +6,7 @@ class Jeu:
 
     def __init__(self):
         self.__score = 0
-        
-        '''self.__liste_jeu = []  # Deprecated replace with 2dimension list
-        for i in range(255):
-            self.__liste_jeu.append(0)'''
+        self.__liste_jeu = [[None for x in range(15)] for y in range(15)]
 
         self.__tab_size_x = 0
         self.__tab_size_y = 0
@@ -24,11 +21,11 @@ class Jeu:
     def score(self):
         return 0
 
-    def get_tableau_jeu_indice(self, index):
-        return self.__liste_jeu[index]
+    def get_tableau_jeu_indice(self, index_x, index_y):
+        return self.__liste_jeu[index_x][index_y]
 
-    def set_tableau_jeu_indice(self, index, valeur):
-        self.__liste_jeu[index] = valeur
+    def set_tableau_jeu_indice(self, index_x, index_y, valeur):
+        self.__liste_jeu[index_x][index_y] = valeur
 
     def test_collision(self):
         return 0

@@ -3,17 +3,16 @@ class Snake:
     def __init__(self):
         self.__vitesse_snake = 16
         self.__direction = 'none'
+        self.__direction_actuel = 'left'
 
-        '''self.__liste_snake = []    # deprecated replace with 2 dimension list
+        self.__liste_snake = []    # deprecated replace with 2 dimension list
 
-        self.__liste_snake.append(112)  # Init a 5 square snake
-        self.__liste_snake.append(113)
-        self.__liste_snake.append(114)
-        self.__liste_snake.append(129)
-        self.__liste_snake.append(144)'''
+        self.__liste_snake.append((7, 7))  # Init a 5 square snake
+        self.__liste_snake.append((7, 8))
+        self.__liste_snake.append((7, 9))
+        self.__liste_snake.append((8, 9))
+        self.__liste_snake.append((9, 9))
 
-
-        self.__taille_snake = 0
         print('Snake cree')
 
 
@@ -39,6 +38,10 @@ class Snake:
     def set_speed(self, value):
         self.__vitesse_snake = value
 
+    def get_taille_snake(self):
+        return len(self.__liste_snake)
 
+    def get_liste_snake(self):
+        return self.__liste_snake
 
 

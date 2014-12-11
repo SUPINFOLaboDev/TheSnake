@@ -6,7 +6,7 @@ import Jeu
 from pygame.locals import *
 
 pygame.init()          #To test functionnalities there is no need to use pygame
-fenetre = pygame.display.set_mode((640, 480))
+fenetre = pygame.display.set_mode((450, 450))
 pygame.display.set_caption('Snake')
 
 serpent = Snake.Snake()
