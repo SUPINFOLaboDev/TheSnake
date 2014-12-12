@@ -1,12 +1,14 @@
 import pygame
 import sys
+import random
 from pygame.locals import *
 
 class Jeu:
 
     def __init__(self):
         self.__score = 0
-        self.__liste_jeu = [[None for x in range(15)] for y in range(15)]
+        self.__liste_jeu = [[0 for x in range(15)] for y in range(15)]
+        self.__liste_pomme = []
 
         self.__tab_size_x = 0
         self.__tab_size_y = 0
@@ -35,6 +37,15 @@ class Jeu:
             if liste[0] == liste[i]:
                 return True
 
-    def spawn_pomme(self):
+    def collision_pomme(self):
         return 0
 
+    def spawn_pomme(self):
+        pomme_possible = []
+        for i in range(15):
+            for j in range(15):
+                if self.__liste_jeu[i][j] == 0:
+                    pomme_possible.append((i, j))
+        index = random.choice(pomme_possible)
+        self.__liste_pomme.append(index)
+        self.__liste_jeu[index[0]][index[1]] = 2

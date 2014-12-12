@@ -14,10 +14,15 @@ class Snake:
         self.__liste_snake = []    # deprecated replace with 2 dimension list
 
         self.__liste_snake.append((7, 7))  # Init a 5 square snake
+        self.__jeu.set_tableau_jeu_indice(7, 7, 1)
         self.__liste_snake.append((7, 8))
+        self.__jeu.set_tableau_jeu_indice(7, 8, 1)
         self.__liste_snake.append((7, 9))
+        self.__jeu.set_tableau_jeu_indice(7, 9, 1)
         self.__liste_snake.append((8, 9))
+        self.__jeu.set_tableau_jeu_indice(8, 9, 1)
         self.__liste_snake.append((9, 9))
+        self.__jeu.set_tableau_jeu_indice(9, 9, 1)
 
         print('Snake cree')
 
@@ -39,6 +44,11 @@ class Snake:
         if self.__direction == 'down' and self.__direction_actuel == 'up':
                 self.changer_direction('up')
 
+        if self.__aggrandir:
+            self.__liste_snake.append((old_x, old_y))
+            self.__jeu.set_tableau_jeu_indice(old_x, old_y, 1)
+            self.__aggrandir = False
+
         for i in range(len(self.__liste_snake)):
             if first:
                 old = self.__liste_snake[i]
@@ -55,15 +65,16 @@ class Snake:
                     self.__liste_snake[i] = (self.__liste_snake[i][0], self.__liste_snake[i][1] + 1)
                     self.__direction_actuel = 'down'
                 first = False
+
+                self.__jeu.set_tableau_jeu_indice(old[0], old[1], 0)
+                self.__jeu.set_tableau_jeu_indice(self.__liste_snake[i][0], self.__liste_snake[i][1], 1)
             else:
                 old_x = old[0]
                 old_y = old[1]
                 old = self.__liste_snake[i]
                 self.__liste_snake[i] = (old_x, old_y)
-        if self.__aggrandir:
-            self.__liste_snake.append((old_x, old_y))
-            self.__aggrandir = False
-            print('Aggrandi')
+                self.__jeu.set_tableau_jeu_indice(old_x, old_y, 0)
+                self.__jeu.set_tableau_jeu_indice(self.__liste_snake[i][0], self.__liste_snake[i][1], 1)
 
         self.__jeu.augmenter_Score(10)
 

@@ -41,6 +41,9 @@ while True:
             if event.key == pygame.K_a:
                 affichage.get_serpent().agrandir_snake()
 
+            if event.key == pygame.K_p:
+                affichage.get_serpent().get_jeu().spawn_pomme()
+
     if index_physique > affichage.get_serpent().get_speed():  # la vitesse du serpent est independante de la vitesse de rendu
         affichage.get_serpent().declencher_deplacement_snake()
         index_physique = 0

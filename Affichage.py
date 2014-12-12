@@ -11,6 +11,7 @@ class Affichage:
         self.__resolution_y = 470
         self.__corps_snake = pygame.image.load("case snake.png").convert()
         self.__background = pygame.image.load("background.png").convert()
+        self.__bonus = pygame.image.load("bonus.png").convert()
 
         self.__serpent = Snake.Snake()
 
@@ -31,9 +32,11 @@ class Affichage:
         for coord in self.__serpent.get_liste_snake():
             self.__fenetre.blit(self.__corps_snake, (coord[0]*30, coord[1]*30))
 
-
     def affichage_pomme(self):
-        return 0
+        for i in range(15):
+            for j in range(15):
+                if self.get_serpent().get_jeu().get_tableau_jeu_indice(i, j) == 2:
+                    self.__fenetre.blit(self.__bonus, (i*30, j*30))
 
     def affichage_game_over(self):
         return 0
