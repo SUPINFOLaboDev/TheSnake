@@ -12,14 +12,14 @@ class Jeu:
         self.__tab_size_y = 0
         print('Jeu creer')
 
-    def augmenter_Score(self):
-        return 0
+    def augmenter_Score(self, valeur):
+        self.__score += valeur
 
-    def recup_score(self):
-        return 0
+    def get_score(self):
+        return self.__score
 
-    def score(self):
-        return 0
+    def set_score(self, valeur):
+        self.__score = valeur
 
     def get_tableau_jeu_indice(self, index_x, index_y):
         return self.__liste_jeu[index_x][index_y]

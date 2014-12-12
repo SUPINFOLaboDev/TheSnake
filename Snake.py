@@ -1,3 +1,5 @@
+import Jeu
+
 class Snake:
     
     def __init__(self):
@@ -5,6 +7,8 @@ class Snake:
         self.__direction = 'left'
         self.__direction_actuel = 'left'
         self.__aggrandir = False
+
+        self.__jeu = Jeu.Jeu()
 
         self.__liste_snake = []    # deprecated replace with 2 dimension list
 
@@ -61,6 +65,7 @@ class Snake:
             self.__aggrandir = False
             print('Aggrandi')
 
+        self.__jeu.augmenter_Score(10)
         #print('python moved')
 
     def agrandir_snake(self):
@@ -94,4 +99,5 @@ class Snake:
     def get_liste_snake(self):
         return self.__liste_snake
 
-
+    def get_jeu(self):
+        return self.__jeu

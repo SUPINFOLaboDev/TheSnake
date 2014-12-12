@@ -1,31 +1,31 @@
 import pygame
-import Jeu
 import Snake
 
 class Affichage:
 
     def __init__(self):
-        self.__fenetre = pygame.display.set_mode((450, 450))
+        self.__fenetre = pygame.display.set_mode((450, 470))
         pygame.display.set_caption('Snake')
 
-        self.__resolution_x = 640
-        self.__resolution_y = 480
-        self.__corps_snake = pygame.image.load("case snake.png")
-        print('Affichage cree')
+        self.__resolution_x = 450
+        self.__resolution_y = 470
+        self.__corps_snake = pygame.image.load("case snake.png").convert()
+        self.__background = pygame.image.load("background.png").convert()
 
         self.__serpent = Snake.Snake()
-        self.__jeu = Jeu.Jeu()
+
+        self.__police = pygame.font.SysFont("police/verdana.ttf", 30)
+        self.__affichage__score = self.__police.render(str(self.__serpent.get_jeu().get_score()), 1, (0, 0, 0))
+
 
     def affichage_jeu(self):
-        # affiche le background
         self.affichage_tableau()
         self.affichage_snake()
         self.affichage_pomme()
         self.affichage_score()
 
     def affichage_tableau(self):
-        # print('tableau affiche')
-        return 0
+        self.__fenetre.blit(self.__background, (0, 0))
 
     def affichage_snake(self):
         for coord in self.__serpent.get_liste_snake():
@@ -36,7 +36,9 @@ class Affichage:
         return 0
 
     def affichage_score(self):
-        return 0
+        self.__affichage__score = self.__police.render(str(self.__serpent.get_jeu().get_score()), 1, (132, 132, 132))
+        self.__fenetre.blit(self.__affichage__score, (0, 450))
+        print('test' + str(self.__serpent.get_jeu().get_score()))
 
     def effacer_fenetre(self):
         self.__fenetre.fill((0, 0, 0))
