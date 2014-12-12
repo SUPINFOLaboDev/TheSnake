@@ -35,10 +35,12 @@ class Affichage:
     def affichage_pomme(self):
         return 0
 
+    def affichage_game_over(self):
+        return 0
+
     def affichage_score(self):
         self.__affichage__score = self.__police.render(str(self.__serpent.get_jeu().get_score()), 1, (132, 132, 132))
         self.__fenetre.blit(self.__affichage__score, (0, 450))
-        print('test' + str(self.__serpent.get_jeu().get_score()))
 
     def effacer_fenetre(self):
         self.__fenetre.fill((0, 0, 0))

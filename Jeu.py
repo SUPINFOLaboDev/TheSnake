@@ -27,8 +27,13 @@ class Jeu:
     def set_tableau_jeu_indice(self, index_x, index_y, valeur):
         self.__liste_jeu[index_x][index_y] = valeur
 
-    def test_collision(self):
-        return 0
+    def test_collision(self, liste):
+        if 14 < liste[0][0] or 0 > liste[0][0] or 14 < liste[0][1] or 0 > liste[0][1]:
+            return True
+
+        for i in range(1, len(liste)):
+            if liste[0] == liste[i]:
+                return True
 
     def spawn_pomme(self):
         return 0

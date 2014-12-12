@@ -48,8 +48,12 @@ while True:
     else:
         index_physique += 1
 
-    # gerer l'affichage
-    affichage.affichage_jeu()
+    if affichage.get_serpent().get_game_over():
+        # affihage game_over
+        pygame.quit()
+        sys.exit()
+    else:
+        affichage.affichage_jeu()
 
     pygame.display.update()
 

@@ -7,6 +7,7 @@ class Snake:
         self.__direction = 'left'
         self.__direction_actuel = 'left'
         self.__aggrandir = False
+        self.__game_over = False
 
         self.__jeu = Jeu.Jeu()
 
@@ -24,7 +25,6 @@ class Snake:
         self.deplacer_snake()
 
     def deplacer_snake(self):
-        # change the list
         first = True
         old = (0, 0)
         old_x = 0
@@ -66,7 +66,8 @@ class Snake:
             print('Aggrandi')
 
         self.__jeu.augmenter_Score(10)
-        #print('python moved')
+
+        self.__game_over = self.__jeu.test_collision(self.__liste_snake)
 
     def agrandir_snake(self):
         self.__aggrandir = True
@@ -86,6 +87,9 @@ class Snake:
 
     def mange_pomme(self):
         return 0
+
+    def get_game_over(self):
+        return self.__game_over
 
     def get_speed(self):
         return self.__vitesse_snake
