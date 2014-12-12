@@ -11,7 +11,6 @@ clock = pygame.time.Clock()
 
 speed_x = 0
 speed_y = 0
-phys_speed = 16
 
 index_physique = 0
 
@@ -28,19 +27,23 @@ while True:
 
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_LEFT:
-                affichage.get_serpent().deplacer_snake("left")
+                affichage.get_serpent().changer_direction("left")
 
             if event.key == pygame.K_RIGHT:
-                affichage.get_serpent().deplacer_snake("right")
+                affichage.get_serpent().changer_direction("right")
 
             if event.key == pygame.K_UP:
-                affichage.get_serpent().deplacer_snake("up")
+                affichage.get_serpent().changer_direction("up")
 
             if event.key == pygame.K_DOWN:
-                affichage.get_serpent().deplacer_snake("down")
+                affichage.get_serpent().changer_direction("down")
+
+            if event.key == pygame.K_a:
+                affichage.get_serpent().agrandir_snake()
 
     if index_physique > affichage.get_serpent().get_speed():  # la vitesse du serpent est independante de la vitesse de rendu
         affichage.get_serpent().declencher_deplacement_snake()
+        index_physique = 0
         # call move python
     else:
         index_physique += 1

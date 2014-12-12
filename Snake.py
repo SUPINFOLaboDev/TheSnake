@@ -1,9 +1,10 @@
 class Snake:
     
     def __init__(self):
-        self.__vitesse_snake = 16
-        self.__direction = 'none'
+        self.__vitesse_snake = 30  # decrease value to increase speed
+        self.__direction = 'left'
         self.__direction_actuel = 'left'
+        self.__aggrandir = False
 
         self.__liste_snake = []    # deprecated replace with 2 dimension list
 
@@ -15,19 +16,68 @@ class Snake:
 
         print('Snake cree')
 
-
     def declencher_deplacement_snake(self):
-        self.deplacer_snake(self.__direction)
+        self.deplacer_snake()
 
-    def deplacer_snake(self, direction):
+    def deplacer_snake(self):
         # change the list
-        print('python moved')
+        first = True
+        old = (0, 0)
+        old_x = 0
+        old_y = 0
+
+        if self.__direction == 'left' and self.__direction_actuel == 'right':
+                self.changer_direction('right')
+        if self.__direction == 'right' and self.__direction_actuel == 'left':
+                self.changer_direction('left')
+        if self.__direction == 'up' and self.__direction_actuel == 'down':
+                self.changer_direction('down')
+        if self.__direction == 'down' and self.__direction_actuel == 'up':
+                self.changer_direction('up')
+
+        for i in range(len(self.__liste_snake)):
+            if first:
+                old = self.__liste_snake[i]
+                if self.__direction == 'left':
+                    self.__liste_snake[i] = (self.__liste_snake[i][0] - 1, self.__liste_snake[i][1])
+                    self.__direction_actuel = 'left'
+                if self.__direction == 'right':
+                    self.__liste_snake[i] = (self.__liste_snake[i][0] + 1, self.__liste_snake[i][1])
+                    self.__direction_actuel = 'right'
+                if self.__direction == 'up':
+                    self.__liste_snake[i] = (self.__liste_snake[i][0], self.__liste_snake[i][1] - 1)
+                    self.__direction_actuel = 'up'
+                if self.__direction == 'down':
+                    self.__liste_snake[i] = (self.__liste_snake[i][0], self.__liste_snake[i][1] + 1)
+                    self.__direction_actuel = 'down'
+                first = False
+            else:
+                old_x = old[0]
+                old_y = old[1]
+                old = self.__liste_snake[i]
+                self.__liste_snake[i] = (old_x, old_y)
+        if self.__aggrandir:
+            self.__liste_snake.append((old_x, old_y))
+            self.__aggrandir = False
+            print('Aggrandi')
+
+        #print('python moved')
 
     def agrandir_snake(self):
-        return 0
+        self.__aggrandir = True
 
-    def agrandir_liste_snake(self):
-        return 0
+    def changer_direction(self, direction):
+
+        if direction == 'left' and self.__direction_actuel == 'right':  # Empeche la "marche arriere" su serpent
+                direction = 'right'
+        if direction == 'right' and self.__direction_actuel == 'left':
+                direction = 'left'
+        if direction == 'up' and self.__direction_actuel == 'down':
+                direction = 'down'
+        if direction == 'down' and self.__direction_actuel == 'up':
+                direction = 'up'
+
+        self.__direction = direction
 
     def mange_pomme(self):
         return 0

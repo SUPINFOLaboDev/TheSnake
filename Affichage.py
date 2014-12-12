@@ -22,22 +22,21 @@ class Affichage:
         self.affichage_snake()
         self.affichage_pomme()
         self.affichage_score()
-        print('jeu affiche')
 
     def affichage_tableau(self):
-        print('tableau affiche')
+        # print('tableau affiche')
+        return 0
 
     def affichage_snake(self):
         for coord in self.__serpent.get_liste_snake():
             self.__fenetre.blit(self.__corps_snake, (coord[0]*30, coord[1]*30))
 
-        print('snake affiche')
 
     def affichage_pomme(self):
-        print('pomme affiche')
+        return 0
 
     def affichage_score(self):
-        print('score affiche')
+        return 0
 
     def effacer_fenetre(self):
         self.__fenetre.fill((0, 0, 0))
